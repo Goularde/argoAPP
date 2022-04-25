@@ -7,16 +7,18 @@ function App() {
   const [nomArgonauteList, setNomArgonauteList] = useState([]);
 
   useEffect(() => {
-    Axios.get("https://dry-woodland-73928.herokuapp.com/api/get/api/get").then((response) => {
-      setNomArgonauteList(response.data);
-    });
+    Axios.get("https://dry-woodland-73928.herokuapp.com/api/get/").then(
+      (response) => {
+        setNomArgonauteList(response.data);
+      }
+    );
   }, []);
 
   const submitNomArgonaute = (e) => {
     e.preventDefault();
     setNomArgonaute(() => "");
     if (nomArgonaute !== "" && nomArgonaute !== null) {
-      Axios.post("https://dry-woodland-73928.herokuapp.com/api/get/api/insert", {
+      Axios.post("https://dry-woodland-73928.herokuapp.com/api/insert", {
         nomArgonaute: nomArgonaute,
       });
     } else {
