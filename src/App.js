@@ -7,7 +7,7 @@ function App() {
   const [nomArgonauteList, setNomArgonauteList] = useState([]);
 
   useEffect(() => {
-    Axios.get("http://localhost:3001/api/get").then((response) => {
+    Axios.get("https://dry-woodland-73928.herokuapp.com/api/get/api/get").then((response) => {
       setNomArgonauteList(response.data);
     });
   }, []);
@@ -16,7 +16,7 @@ function App() {
     e.preventDefault();
     setNomArgonaute(() => "");
     if (nomArgonaute !== "" && nomArgonaute !== null) {
-      Axios.post("http://localhost:3001/api/insert", {
+      Axios.post("https://dry-woodland-73928.herokuapp.com/api/get/api/insert", {
         nomArgonaute: nomArgonaute,
       });
     } else {
